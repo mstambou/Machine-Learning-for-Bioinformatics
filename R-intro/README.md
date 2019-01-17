@@ -49,5 +49,7 @@ This script uses the [MASS](https://cran.r-project.org/web/packages/MASS/index.h
 If you cloned this repository, you should already have [logit-demo.R](logit-demo.R).
 
   * The script comes from [this tutorial](http://www.ats.ucla.edu/stat/r/dae/logit.htm) and explained there
-  * [Introduction to logistic regression ](http://userwww.sfsu.edu/efc/classes/biol710/logistic/logisticreg.htm)
+  * [Introduction to logistic regression ](https://en.wikipedia.org/wiki/Logistic_regression)
   * [Paper with logistic regression](http://bioinformatics.oxfordjournals.org/content/23/15/1945.long)
+  
+  here we will see a small tutorial of how we can use LR to build a classifier, after training on the data given and then prediciting classes for the new data points.
