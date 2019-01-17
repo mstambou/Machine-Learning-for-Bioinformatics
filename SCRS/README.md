@@ -37,3 +37,12 @@ Dimensionality reduction algorithms such as Principal component analysis (PCA) c
 The most frequently used technique is PCA, which identifies the directions of largest variance principal components and transforms the data so that the first principal component has the largest possible variance, and successive principle components in turn each have the highest variance possible while remaining orthogonal to the preceding components. The contribution each gene makes to each component is used to infer which genes are contributing the most to variance in the population and are involved in differentiating different subpopulations
 
 In this lab we will practice some dimensionality reduction of data sets and clustering them based on their expression profiles.
+
+Assuming we have gene sets from different cells and their expression data (RNA-seq), and we have aligned and quantified our single cell RNA-seq data, we checked for quality control, trimmed low quality reads got rid of the short ones etc... and have obtained tables where it has cells and their RNA quantification information. 
+Now we want to identify transcriptional clusters from these tables. Many clustering algorithms exist that are specialized in different tasks, however the underlying techniques are still based on classical clustering algorithms such as K-means, graph based, density-based or hierarchical clustering methods.
+
+we will use some of these approaches alongside with dimensionality reduction techniques in order to clean normalize and cluster our data. For this purpose we're going to use Patient V PBMC single cell RNA-seq data from 10x genomics. For more details about the dataset please visit [here](https://support.10xgenomics.com/single-cell-gene-expression/datasets/1.1.0/frozen_pbmc_donor_b) .
+We also have previous knowledge about this dataset, because we know what cell-types must be present and a number of markers for these cell-types are available such as CD3E for T-cells, CD19 and CD20 for B-cells, etc. This knowledge will be used for sanity checks and to check the validity of our clustering results later.
+
+ ##### Data preparation
+ We will start this lab by following the R-script we have [here](single_cell_RNAseq.R) 
