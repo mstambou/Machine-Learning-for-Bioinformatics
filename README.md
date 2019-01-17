@@ -10,7 +10,7 @@ It contains the materials covered in the lab sessions.
 
   * [No Lab] *(week 1)*
   * [Introduction to R & clustering](R-intro/) *(week 2)*
-  * [Single Cell RNA Sequencing Using R] (SCRS/) *(week 3)*
+  * [Single Cell RNA Sequencing Using R](SCRS/) *(week 3)*
   * [Using Python] (exploring Sk-learn machine learning packages) *(week 4)*
   * [Machine learning] (ML practice continued) *(week 5)*
   * [Machine learning] (ML practice) *(week 6)*
