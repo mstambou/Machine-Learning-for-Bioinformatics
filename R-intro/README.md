@@ -31,25 +31,9 @@ We can read data using one of the read functions, in this case because we have a
 But this merely reads and prints the data.
 We would rather store it in a variable, so try `data <- read.csv("binary.csv")`.
 
-### Plotting a Gaussian distribution
+you can also directly read the same dataset from its online repositiry by issuing the following command:
 
-If you cloned this repository, you should already have [gaussian-demo.R](gaussian-demo.R).
+```R
+mydata <- read.csv("http://www.ats.ucla.edu/stat/data/binary.csv")
+```
 
-We can load a script into R using the `source()` function.
-Let us see what this one does by loading it  : `source("gaussian-demo.R")`.
-We got some nice plots, let us walk through the well commented code to understand what it does.  
-
-### Fitting some lines
-
-If you cloned this repository, you should already have [lm-demo.R](lm-demo.R).
-This script uses the [MASS](https://cran.r-project.org/web/packages/MASS/index.html) library.
-
-### Fitting a logistic linear regression
-
-If you cloned this repository, you should already have [logit-demo.R](logit-demo.R).
-
-  * The script comes from [this tutorial](http://www.ats.ucla.edu/stat/r/dae/logit.htm) and explained there
-  * [Introduction to logistic regression ](https://en.wikipedia.org/wiki/Logistic_regression)
-  * [Paper with logistic regression](http://bioinformatics.oxfordjournals.org/content/23/15/1945.long)
-  
-  here we will see a small tutorial of how we can use LR to build a classifier, after training on the data given and then prediciting classes for the new data points.
