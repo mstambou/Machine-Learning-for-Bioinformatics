@@ -23,6 +23,13 @@ To familiarize yourself with the R syntax, I recomend you quickly run through th
 
 Now, let us run through the short tutorial that I inherited from the previous years lab notes :
 
+One of the reasons R became a popular language is because of the wide community eactively developing usefull packages for analysis and visualization. CRAN (Comprehensive R Archive Network) has made it easy to install packages in R. To install a package that you need to use you simply include:
+```R
+install.packages("package_name")
+library(package_name)
+```
+
+
 ### Loading some data
 
 If you cloned this repository, you should already have [binary.csv](binary.csv).
@@ -37,3 +44,19 @@ you can also directly read the same dataset from its online repositiry by issuin
 mydata <- read.csv("http://www.ats.ucla.edu/stat/data/binary.csv")
 ```
 Lets practice some R syntax using this [script](R_intro.R) on the repository
+
+R also provides built in datasets in R that come with the standard library and could be used to run/test algorithms
+for example the airquality dataset
+### working with data
+data frames are a popular data strcutre used to store data in tabualr format in R. let's create our own data frame.
+* we can merge two dataframe into each other either by row or colums
+* we can access feature i.e. columns of dataframes using the $ key
+* we can add a column to the dataframe
+
+Lists are another datastrcture in R that are used a lot.
+* we can index lists in many different ways
+
+
+Like we did in the case of lists, we can also query dataframes and select rows and columns based on logical conditions for example get the indivduals that are 8 years or older
+
+
