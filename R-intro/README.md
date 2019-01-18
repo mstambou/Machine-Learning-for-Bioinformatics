@@ -89,3 +89,45 @@ Let's cluster the cars dataset also using this type of clustering.
 
 Let's get a classification data set from UCI repository. We're going to use the breast cancer dataset, where thei patients are classified as malignent or benign based on certain featureand characteristics of their cells and physiology. Ideally one would expect two good clusters from this dataset.
 Since this is a non-supervised learning we should ommit the class column otherwise clustering would be made too easy in this case.
+
+#### K-means clustering
+
+ 
+ [K-means](https://en.wikipedia.org/wiki/K-means_clustering) clustering aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean, serving as a prototype of the cluster. The value of K is user provided and is usually decide after some trial and error. 
+ 
+ * A popular method to decide on the number of cluster in k-means is using the elbow method. This is demonstrated in the code, we first plot the sum of errors within groups as a function of number of clusters we want to cluster. 
+ *Naturally the error will decrease as we increase the number of clusters, but a reasonable choice of cluster numbers is when we see the biggest drop in error values.
+ * In this case we're setting the number of cluster to be 5.
+ 
+ ### Dimensionality reductions and Principle Component Analysis
+ 
+ Principal Component Analysis (PCA) is a useful technique for exploratory data analysis, allowing you to better visualize the variation present in a dataset with many variables. It is particularly helpful in the case of "wide" datasets, where you have many variables for each sample. In this tutorial, you'll discover PCA in R.
+ 
+ #### Usefullness 
+ Imagine a dataset where many variables are present (High dimensional data), you cannot easily plot the data in its raw format, making it difficult to get a sense of the trends present within. PCA allows you to see the overall "shape" of the data, identifying which samples are similar to one another and which are very different. This can enable us to identify groups of samples that are similar and work out which variables make one group different from another.
+ 
+ #### How it works
+ What PCA does is it takes a dataset with many variables, and you simplify that dataset by turning your original variables into a smaller number of "Principal Components". rincipal Components are the underlying structure in the data. They are the directions where there is the most variance, the directions where the data is most spread out. This means that we try to find the straight line that best spreads the data out when it is projected along it. This is the first principal component, the straight line that shows the most substantial variance in the data. 
+ It's a linear transformation of your dataset, to a new coordinate system in such a way that the most significant variance is found on the first coordinate, and each subsequent coordinate is orthogonal to the last and has a lesser variance. In this way, you transform a set of x correlated variables over y samples to a set of p uncorrelated principal components over the same samples. 
+ Where many variables correlate with one another, they will all contribute strongly to the same principal component. Each principal component sums up a certain percentage of the total variation in the dataset. Where your initial variables are strongly correlated with one another, you will be able to approximate most of the complexity in your dataset with just a few principal components
+ 
+ #### PCA example 
+ Here we will put PCA for a test by applying it on the "mtcars" dataset that we've allready seen before. As we saw the dataset has 32 car models and each car has 11 features. Since PCA is a linear transformation of our feature space and it works well with numerical data, lets first clean our dataset and remvoe all the columns that contain categorical datas. This leaves us with a 9x32 matrix.
+ 
+ Let's apply the PCA algorithm on our data and what each PC represents.
+ The results show that:
+ * we obtain 9 principal components, which you call PC1-9. 
+ * Each of these explains a percentage of the total variation in the dataset. That is to say: PC1 explains 63% of the total variance, which means that nearly two-thirds of the information in the dataset (9 variables) can be encapsulated by just that one Principal Component. 
+ * PC2 explains 23% of the variance. So, by knowing the position of a sample in relation to just PC1 and PC2, you can get a very accurate view on where it stands in relation to other samples, as just PC1 and PC2 can explain 86% of the variance.
+ 
+ #### Plotting PCA
+ Let us plot our PCA. You will make a biplot, which includes both the position of each sample in terms of PC1 and PC2 and also will show you how the initial variables map onto this.
+  * we're going use the ggbiplot package, for this slightly more advanced plot, which offers a user-friendly and pretty function to plot biplots. 
+  * A biplot is a type of plot that will allow you to visualize how the samples relate to one another in our PCA (which samples are similar and which are different) and will simultaneously reveal how each variable contributes to each principal component.
+  Let's first install the necesarry packages.
+  
+  The X-axis and Y-axis in the plot rerpresent out first and second principal components. We also can see their labels that show the percentage of variance each of these PCs capture in the data.
+  The red axes are seen as arrows originating from the center point. Here, we see that the variables hp, cyl, and disp all contribute to PC1, with higher values in those variables moving the samples to the right on this plot. This lets us see how the data points relate to the axes.
+  
+  Now let's label the data points on the graph in order to see which of these rows are clustered together along the principal components.
+ 
