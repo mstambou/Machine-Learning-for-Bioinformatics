@@ -112,7 +112,7 @@ Since this is a non-supervised learning we should ommit the class column otherwi
  Where many variables correlate with one another, they will all contribute strongly to the same principal component. Each principal component sums up a certain percentage of the total variation in the dataset. Where your initial variables are strongly correlated with one another, you will be able to approximate most of the complexity in your dataset with just a few principal components
  
  #### PCA example 
- Here we will put PCA for a [test](R_simple_PCA.r) by applying it on the "mtcars" dataset that we've allready seen before. As we saw the dataset has 32 car models and each car has 11 features. Since PCA is a linear transformation of our feature space and it works well with numerical data, lets first clean our dataset and remvoe all the columns that contain categorical datas. This leaves us with a 9x32 matrix.
+ Here we will put PCA for a [test](R_simple_PCA.R) by applying it on the "mtcars" dataset that we've allready seen before. As we saw the dataset has 32 car models and each car has 11 features. Since PCA is a linear transformation of our feature space and it works well with numerical data, lets first clean our dataset and remvoe all the columns that contain categorical datas. This leaves us with a 9x32 matrix.
  
  Let's apply the PCA algorithm on our data and what each PC represents.
  The results show that:
