@@ -46,3 +46,16 @@ We also have previous knowledge about this dataset, because we know what cell-ty
 
  ##### Data preparation
  We will start this lab by following the R-script we have [here](single_cell_RNAseq.R) 
+ First we need to prepare the data by cleaning it, normalizing it and performing some dimensionality reductions, so that we can more easily cluster them.
+ 
+ By taking advantage of our previous knowledge of marker genes, we should expect to see different clusters between the B-cells and the T-cell subtypes, monocytes etc... To track this we highlight each time one of the markers for these cell subtypes, and we can see disticnt clusters in the case of MS4A1 and CD3E representing B-cell and T-cell markers respectively.
+ 
+ ##### K-means
+ Now that we have our dimensionality reduced we can cluster our dataset by trying different clustering algorithms.
+ Let's begin by a simple [K-means](https://en.wikipedia.org/wiki/K-means_clustering) clustering over our principle components. The value of K is user provided and is usually decide after some trial and error. In this case we select K to be 10, hence the algorithm will try to cluster the data into 10 clusters.
+ 
+ ##### Density Based Clustering Techniques
+ Another popular clustering techinques are Density Based Clustering Techniques, these clustering techniques, unlike k-means clustering are not limitted by the globular shape of cluster rather they take advantage of proximities of which the data points are found in a certain space and grow/merge clusters. In this case we will use a Hierarchical DBSCAN. The clustering assigned by HDBSCAN are quite different from those that are assigned by k-means.
+ 
+ ##### Hierarchical clustering
+ Another popular family of clustering algorithms are the hierarchical based clustering, especially used in phylogenetics. This type of clustering builds a tree relationship among the cells and user can decide on a horizontal line to choose the granularity of clustering. There are also choices concerning the distance metric and agglomeration method that is needed to be made. In this case we will resort to wards method for agglomeration, which merges two clusters by minimizing some objective function (such as reducing the intra cluster distance or maximizing the inter-cluster distance).
