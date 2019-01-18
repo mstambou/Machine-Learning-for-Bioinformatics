@@ -36,4 +36,4 @@ you can also directly read the same dataset from its online repositiry by issuin
 ```R
 mydata <- read.csv("http://www.ats.ucla.edu/stat/data/binary.csv")
 ```
-
+Lets practice some R syntax using this [script](R_intro.R) on the repository
