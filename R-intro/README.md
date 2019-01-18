@@ -75,3 +75,17 @@ Another widely used plot is the boxplot.
 
 Lets do a box plot on the same air passengers dataset, and study the distribution of cholesterol levels across three different types of individuals (non-smokers, pipe smokers and cigar smokers).
 We can see some differences in the average levels of the cholesterol across these thre groups.
+
+### Clustering
+Clustering is a commonly used techinique in any type of analysis especially if we do not have much information about our dataset and we want to see some patterns and check whether or not our data is organized to some extent. We're going to apply two popular clustering techniques over small datasets to demonstrate their results. Let's follow this [script](R_clustering.R) to practice some clustering
+
+#### Hierarchical CLustering
+
+A popular family of clustering algorithms are the [hierarchical based clustering](https://en.wikipedia.org/wiki/Hierarchical_clustering), especially used in phylogenetics. This type of clustering builds a tree relationship among the cells and user can decide on a horizontal line to choose the granularity of clustering. There are also choices concerning the distance metric and agglomeration method that is needed to be made. In this case we will resort to wards method for agglomeration, which merges two clusters by minimizing some objective function (such as reducing the intra cluster distance or maximizing the inter-cluster distance).
+
+Let's first synthesize a dataset in R in order to run a hierarchical clustering.
+Results in Hierarchical clustering can be visualized in nice dendograms. 
+Let's cluster the cars dataset also using this type of clustering.
+
+Let's get a classification data set from UCI repository. We're going to use the breast cancer dataset, where thei patients are classified as malignent or benign based on certain featureand characteristics of their cells and physiology. Ideally one would expect two good clusters from this dataset.
+Since this is a non-supervised learning we should ommit the class column otherwise clustering would be made too easy in this case.
