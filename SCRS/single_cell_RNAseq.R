@@ -76,4 +76,16 @@ plotEmbedding(emb, com.db,
               mark.clusters=TRUE, alpha=0.1, mark.cluster.cex=1,
               verbose=FALSE)
 
-
+## Hierarchical clustering with dynamic tree cutting
+install.packages("dynamicTreeCut")
+library(dynamicTreeCut)
+set.seed(0)
+d <- as.dist(1-cor(t(pcs)))
+hc <- hclust(d, method='ward.D')
+com.hc <- cutreeDynamic(hc, distM=as.matrix(d), deepSplit=4, verbose=FALSE)
+names(com.hc) <- rownames(pcs)
+par(mfrow=c(1,1), mar=rep(2,4))
+plotEmbedding(emb, com.hc, 
+              main='Hclust', xlab=NA, ylab=NA, 
+              mark.clusters=TRUE, alpha=0.1, mark.cluster.cex=1,
+              verbose=FALSE) 
