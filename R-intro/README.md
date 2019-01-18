@@ -59,4 +59,19 @@ Lists are another datastrcture in R that are used a lot.
 
 Like we did in the case of lists, we can also query dataframes and select rows and columns based on logical conditions for example get the indivduals that are 8 years or older
 
+### Plotting data in R
 
+Plotting is made easy in R once you get used to the syntax. R has a lot of libraries to produce fancy plots but for now let's just stick to the basics. In R there are:
+* High-level plotting functions create a new plot on the graphics device, possibly with axes, labels, titles and so on.
+* Low-level plotting functions add more information to an existing plot, such as extra points, lines and labels.
+* Interactive graphics functions allow you interactively add information to, or extract information from, an existing plot, using a pointing device such as a mouse.
+
+Lets use the air passengers dataset and plots some histograms and line plots.
+
+Another widely used plot is the boxplot.
+* Box plots display variation in samples of a statistical population without making any assumptions of the underlying statistical distribution. The spacings between the different parts of the box indicate the degree of dispersion (spread) and skewness in the data, and show outliers. 
+* R command: boxplot()
+* By default, boxplot() automatically computes median, first and third quartile ("hinges") and 95% confidence interval of median ("notches").
+
+Lets do a box plot on the same air passengers dataset, and study the distribution of cholesterol levels across three different types of individuals (non-smokers, pipe smokers and cigar smokers).
+We can see some differences in the average levels of the cholesterol across these thre groups.
