@@ -36,11 +36,14 @@ Lest first check the quality of the reads we downloaded using [FastQC](https://w
 to get FastQC please go to this [link](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.8.zip) or issue a wget command in your shell
 ```
 wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.8.zip
+and then make it executable
+chmod +x fastqc
 ```
 and then update your ~/.bashrc file to locate the FastQC executables. i.e.:
 ```
 export PATH="/home/mstambou/FastQC/:$PATH"
 ```
+
 we can use two methods to generate fastqc reports over the fastq reads, the interactive way or through comamnd line. Let's use command line to check the quality of our reads. We can issue a command i.e.:
 ```
 fastqc SRR8309844/SRR8309844_2.fastq.gz -t 10 -d fastqc_reports/
