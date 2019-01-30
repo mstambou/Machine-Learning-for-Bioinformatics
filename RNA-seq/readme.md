@@ -73,3 +73,33 @@ After postprocessing and discarding some of the low quality reads using the Trim
 
 Number of reads before and after trimming
 ![GitHub Logo](before_after_trimming.png)
+
+### Read mapping or alignment
+
+Now that we have the raw reads and we checked for their quality, removed law quality reads, trimmed short ones etc, we can now map these reads back to either a refernce genome (which is what we will be doing today) or assemble these short reads into contigs and then map the reads back to contigs in case we do not know what to expect in our sample. However luckily in our case we know that these read samples came from an e-coli culture, hence we can extract the complete genome for the e-coli k12 strain and substrain MG1655. We can get complete and draft genomes from [NCBI](https://www.ncbi.nlm.nih.gov)'s website, in this case [here](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/627/195/GCF_003627195.1_ASM362719v1). WE are going to use [BOWTIE2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) as our mapper. To perform the mapping we need to do two steps:
+1) first we need to create a database (bowtie index files) from the reference genome for e-coli in our case, where bowtie uses this to map the reads back to it.
+2) second we actually map these reads back to this database.
+
+Let's first download the necessarry executables to be able to run bowtie2. Bowtie2 can be obtained by issuing a wget command, i.e.:
+```
+wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.4.3/bowtie2-2.3.4.3-linux-x86_64.zip/download
+```
+Let's also add the path to bowtie directory in our bashrc file after unpacking it.
+```
+export BT2_HOME="/u/i529/software/bowtie/bowtie2-2.3.4.3-linux-x86_64/"
+```
+Here I'm linking the $BT_HOME variable to bowtie2 directory since there are more than one tool that bowtie offers. Lets now build the index files for our database. I will be using individual genes of e-coli rather than the whole genome since we are mapping back RNA-seq data instead of DNA data, and there will be some differential expressions. Therefore it is better to calculate the abundance of the individual genese separately.
+The genes for e-coli are located under this directory, in fasta format:
+```
+/u/i529/labs/lab3/escherichia_coli_str_k-12_substr_mg1655/GCF_003627195.1_ASM362719v1_cds_from_genomic.fna.gz
+```
+To build an index database I issued the following command, under the directory '/u/i529/labs/lab3/e_coli_indices/':
+```
+$BT2_HOME/bowtie2-build /u/i529/labs/lab3/escherichia_coli_str_k-12_substr_mg1655/GCF_003627195.1_ASM362719v1_cds_from_genomic.fna.gz e_coli_db
+```
+Now that we have the index database we can mapp the fastq reads from the different samples onto this database. I created three different folders under a folder called read_maps, named by the accession numbers, each of these folders containg the mappings between the reads from the respective sample to the created database. Commands issued to make these mappings are:
+```
+$BT2_HOME/bowtie2 --threads 8 -x ../../e_coli_indices/e_coli_db -1 ../../SRR8309842/SRR8309842_1.fastq.gz -2 ../../SRR8309842/SRR8309842_2.fastq.gz -S SRR8309842.sam
+$BT2_HOME/bowtie2 --threads 8 -x ../../e_coli_indices/e_coli_db -1 ../../SRR8309843/SRR8309843_1.fastq.gz -2 ../../SRR8309843/SRR8309843_2.fastq.gz -S SRR8309843.sam
+$BT2_HOME/bowtie2 --threads 8 -x ../../e_coli_indices/e_coli_db -1 ../../SRR8309844/SRR8309844_1.fastq.gz -2 ../../SRR8309844/SRR8309844_2.fastq.gz -S SRR8309844.sa
+```
