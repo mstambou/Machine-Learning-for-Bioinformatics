@@ -107,4 +107,10 @@ The mappings are in [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf) format
 
 ### Abundance Quantification
 
-In this section we are going to quantify the abundance of these individual genes. There are many software to perform this step and many diferent ways to report abundances. Here I am going to use quantification scripts that I wrote, however you may use different programs to do this step. The results should more or less agree in general.
+In this section we are going to quantify the abundance of these individual genes. There are many software to perform this step and many diferent ways to report abundances. Here I am going to use quantification scripts that I wrote, however you may use different programs to do this step. The results should more or less agree in general. The python script ['sam_read_2_gene_final.py'](sam_read_2_gene_final.py). To run this script we need to specify two command line arguments:
+1) input directory containing the sam file.
+2) output directory to store the abundance CSVs.
+Example to run code i.e.:
+```
+python3 sam_read_2_gene_final.py in/dir/file.sam out/dir/abundance.txt
+```
