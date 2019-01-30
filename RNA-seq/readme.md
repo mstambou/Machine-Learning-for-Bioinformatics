@@ -126,4 +126,4 @@ python3 sam_read_2_gene_final.py read_maps/SRR8309844/SRR8309844.sam read_maps/S
 Now that we have the gene quantifications across different samples for expression data, we can perform different types of analysis concerning differential gene analysis. In this case I will combine the data from three samples into one data frame using a python [script](abundance_heatmaps.py), then I will use R to visualize these expression levels into a heatmap, using this [script](heatmap.R). For somplicity I will only plot the heatmaps over 100 genes from a total of 4000 genes.
 
 
-![GitHub Logo](heatmap.png)
+![GitHub Logo](heatmap.pdf)
