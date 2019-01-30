@@ -63,7 +63,7 @@ export PATH="/home/mstambou/trimmomatic/Trimmomatic-0.38/:$PATH"
 ```
 Let's trim one of the paired end reads. using the reads under the folder SRR8309842:, by issuing the following command:
 ```
-java -jar /home/mstambou/trimmomatic/Trimmomatic-0.38/trimmomatic-0.38.jar PE -phred33 -threads 24 SRR8309842/SRR8309842_1.fastq.gz SRR8309842/SRR8309842_2.fastq.gz SRR8309842/SRR8309842_1_clean.fastq.gz SRR8309842/SRR8309842_1_clean_unpaired.fastq.gz  SRR8309842/SRR8309842_2_clean.fastq.gz SRR8309842/SRR8309842_2_clean_unpaired.fastq.gz SLIDINGWINDOW:4:30 MINLEN:120
+java -jar /u/i529/software/Trimmomatic-0.38/trimmomatic-0.38.jar PE -phred33 -threads 24 SRR8309842/SRR8309842_1.fastq.gz SRR8309842/SRR8309842_2.fastq.gz SRR8309842/SRR8309842_1_clean.fastq.gz SRR8309842/SRR8309842_1_clean_unpaired.fastq.gz  SRR8309842/SRR8309842_2_clean.fastq.gz SRR8309842/SRR8309842_2_clean_unpaired.fastq.gz SLIDINGWINDOW:4:30 MINLEN:120
 ```
 In this command I'm telling the program to go over the paired end reads using a sliding window of size 4 and trim any read that falls below a score of 30 (very strict in this case to see some difference) and also discard any read that is less than 120 bases.
 
