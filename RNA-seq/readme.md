@@ -103,3 +103,8 @@ $BT2_HOME/bowtie2 --threads 8 -x ../../e_coli_indices/e_coli_db -1 ../../SRR8309
 $BT2_HOME/bowtie2 --threads 8 -x ../../e_coli_indices/e_coli_db -1 ../../SRR8309843/SRR8309843_1.fastq.gz -2 ../../SRR8309843/SRR8309843_2.fastq.gz -S SRR8309843.sam
 $BT2_HOME/bowtie2 --threads 8 -x ../../e_coli_indices/e_coli_db -1 ../../SRR8309844/SRR8309844_1.fastq.gz -2 ../../SRR8309844/SRR8309844_2.fastq.gz -S SRR8309844.sa
 ```
+The mappings are in [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf) format (sequence alignment/maping format). Now we can use this sam failes to quantify abundance of genes.
+
+### Abundance Quantification
+
+In this section we are going to quantify the abundance of these individual genes. There are many software to perform this step and many diferent ways to report abundances. Here I am going to use quantification scripts that I wrote, however you may use different programs to do this step. The results should more or less agree in general.
