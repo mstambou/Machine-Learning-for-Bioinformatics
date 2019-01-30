@@ -49,4 +49,17 @@ to generate an html formatted report. A good tutorial to understand the differen
 
 ![GitHub Logo](SRR8309844_2_fastqc.png)
 
-It's quite common for NGS sequenceres, especially for illumina technologies that the read quality towards the end of the reads would start degrading. The character read quality indicators are converted to a [phred](https://en.wikipedia.org/wiki/Phred_quality_score) quality score. In this case the scoring is [Illumina 1.9 encoding](https://www.drive5.com/usearch/manual/quality_score.htm), as a general rule of thumb scores above 20 are considered to be good and the ones below that value would be better off if they were trimmed.
+It's quite common for NGS sequenceres, especially for illumina technologies that the read quality towards the end of the reads would start degrading. The character read quality indicators are converted to a [phred](https://en.wikipedia.org/wiki/Phred_quality_score) quality score. In this case the scoring is [Illumina 1.9 encoding](https://www.drive5.com/usearch/manual/quality_score.htm), as a general rule of thumb scores above 20 are considered to be good and the ones below that value would be better off if they were trimmed. Fortunately in our case all the reads are of higher quality and in a typical case we do not need to post process the reads and trim them.
+
+### Trimming poor reads
+Just for the sake of demonstration we will trim some of the reads using a tool caleld [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic).
+Again this tool could be obtained from its website by issuing a wget command, and then updating the $path varialble to encorporte its executable:
+```
+wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.38.zip
+export PATH="/home/mstambou/trimmomatic/Trimmomatic-0.38/:$PATH"
+```
+Let's trim one of the paired end reads. using the reads under the folder SRR8309842:, by issuing the following command:
+```
+java -jar /home/mstambou/trimmomatic/Trimmomatic-0.38/trimmomatic-0.38.jar PE -phred33 -threads 24 SRR8309842/SRR8309842_1.fastq.gz SRR8309842/SRR8309842_2.fastq.gz SRR8309842/SRR8309842_1_clean.fastq.gz SRR8309842/SRR8309842_1_clean_unpaired.fastq.gz  SRR8309842/SRR8309842_2_clean.fastq.gz SRR8309842/SRR8309842_2_clean_unpaired.fastq.gz SLIDINGWINDOW:4:30 MINLEN:120
+```
+In this command I'm telling the program to go over the paired end reads using a sliding window of size 4 and trim any read that falls below a score of 30 (very strict in this case to see some difference) and also discard any read that is less than 120 bases.
