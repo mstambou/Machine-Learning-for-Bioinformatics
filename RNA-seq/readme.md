@@ -15,7 +15,7 @@ Following these steps comes data preparation and analysis, which we will be goin
 3) quantification of abundance of these genes.
 4) differential expression analysis.
 
-![GitHub Logo](RNA-seq_worflow.png)
+![GitHub Logo](RNA-seq_workflow.png)
 
 The most common way of presenting raw reads is in Fastq format. Below is an example of one read:
 ```
