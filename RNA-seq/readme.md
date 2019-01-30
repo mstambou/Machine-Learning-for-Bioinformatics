@@ -114,3 +114,16 @@ Example to run code i.e.:
 ```
 python3 sam_read_2_gene_final.py in/dir/file.sam out/dir/abundance.txt
 ```
+I quantified RNA abundance across the three samples by issuing the following commands:
+```
+python3 sam_read_2_gene_final.py read_maps/SRR8309842/SRR8309842.sam read_maps/SRR8309842/SRR8309842_abundance.txt
+python3 sam_read_2_gene_final.py read_maps/SRR8309843/SRR8309843.sam read_maps/SRR8309843/SRR8309843_abundance.txt
+python3 sam_read_2_gene_final.py read_maps/SRR8309844/SRR8309844.sam read_maps/SRR8309844/SRR8309844_abundance.txt
+```
+
+### Differential Expression analysis 
+
+Now that we have the gene quantifications across different samples for expression data, we can perform different types of analysis concerning differential gene analysis. In this case I will combine the data from three samples into one data frame using a python [script](abundance_heatmaps.py), then I will use R to visualize these expression levels into a heatmap, using this [script](heatmap.R). For somplicity I will only plot the heatmaps over 100 genes from a total of 4000 genes.
+
+
+![GitHub Logo](heatmap.pdf)
