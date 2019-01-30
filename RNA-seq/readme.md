@@ -49,3 +49,4 @@ to generate an html formatted report. A good tutorial to understand the differen
 
 ![GitHub Logo](SRR8309844_2_fastqc.png)
 
+It's quite common for NGS sequenceres, especially for illumina technologies that the read quality towards the end of the reads would start degrading. The character read quality indicators are converted to a [phred](https://en.wikipedia.org/wiki/Phred_quality_score) quality score. In this case the scoring is [Illumina 1.9 encoding](https://www.drive5.com/usearch/manual/quality_score.htm), as a general rule of thumb scores above 20 are considered to be good and the ones below that value would be better off if they were trimmed.
