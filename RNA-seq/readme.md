@@ -15,6 +15,8 @@ Following these steps comes data preparation and analysis, which we will be goin
 3) quantification of abundance of these genes.
 4) differential expression analysis.
 
+![GitHub Logo](RNA-seq_worflow.png)
+
 The most common way of presenting raw reads is in Fastq format. Below is an example of one read:
 ```
 @SRR8309842.1 1/1
@@ -46,4 +48,4 @@ fastqc SRR8309844/SRR8309844_2.fastq.gz -t 10 -d fastqc_reports/
 to generate an html formatted report. A good tutorial to understand the different compomnents of the report and how to analyze results would be [here](https://www.youtube.com/watch?v=bz93ReOv87Y)
 
 ![GitHub Logo](SRR8309844_2_fastqc.png)
-Format: ![Alt Text](url)
+
