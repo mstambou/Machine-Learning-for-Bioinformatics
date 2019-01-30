@@ -67,3 +67,6 @@ In this command I'm telling the program to go over the paired end reads using a 
 After postprocessing and discarding some of the low quality reads using the Trimmomatic tool, let us again visualize the reads using FastQC.
 
 ![GitHub Logo](SRR8309844_2_clean_fastqc.png)
+
+Number of reads before and after trimming
+![GitHub Logo](before_after_trimming.png)
