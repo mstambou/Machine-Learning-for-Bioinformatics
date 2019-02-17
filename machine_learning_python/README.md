@@ -41,5 +41,14 @@ from sklearn import datasets
 iris = datasets.load_iris()
 digits = datasets.load_digits()
 ```
+These datasets provide to us by sklearn are preprocessed for us and ready to be used by the predictors hence we do not need to process the datasets first to make put it in format that would be recognized by the functions. The way these datasets are organized are in the form of dictionaries. In this dictionary object data is stored, a matrix cotanining all the features of the different points, another vector containing the class lables (if classification) or targets (if its a regression problem). There might be one or more response variables in case of supervised learning. Let's take a closer look to what the digits.data looks like:
 
+```python
+print(digits.data)
+print(digits.target)
+```
+These two commands would show us the feature space of our data, and the target that we are trying to learn and predict, which is the ground truth. Now let's check out the shape of this digits dataset:
 
+```python
+print(digits.images[0])
+```
