@@ -34,4 +34,12 @@ Now enough with the talking and let us see some examples of what we just talked 
 
 SK-learn even provides us with pre-existing datasets (benchmarking datasets) so that we can try and test our predictors on them. Some of the more famous datasetsare [iris](https://en.wikipedia.org/wiki/Iris_flower_data_set) and [digits](http://archive.ics.uci.edu/ml/datasets/Pen-Based+Recognition+of+Handwritten+Digits) datasets for classification and the [boston house prices](https://archive.ics.uci.edu/ml/machine-learning-databases/housing/) dataset for regression.
 
+Let's first load some data sets into variables and play with them:
+
+```python
+from sklearn import datasets
+iris = datasets.load_iris()
+digits = datasets.load_digits()
+```
+
 
