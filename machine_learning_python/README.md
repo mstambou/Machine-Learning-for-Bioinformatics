@@ -52,3 +52,4 @@ These two commands would show us the feature space of our data, and the target t
 ```python
 print(digits.images[0])
 ```
+As we can see a matrix encoding of all the digits between 0 to 9, are presented to us. the intensity of the ink on paper is encoded in numbers which are digitalized and given in the form of matrices so that it could be used by ML algorithms.
