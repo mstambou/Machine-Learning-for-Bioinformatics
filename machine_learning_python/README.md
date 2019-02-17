@@ -79,4 +79,7 @@ SVC(C=100.0, cache_size=200, class_weight=None, coef0=0.0,
   max_iter=-1, probability=False, random_state=None, shrinking=True,
   tol=0.001, verbose=False)
   ```
-  Now that we tweaked and adjusted (i.e. trained) our machine learning algorithm we are ready to predict new (previously unseen) values based on solely from their 
+  Now that we tweaked and adjusted (i.e. trained) our machine learning algorithm we are ready to predict new (previously unseen) values based on solely from their features. Let's predict the class for the last data points since we did not include it in our training. By predicting, you’ll determine the image from the training set that best matches the last image.
+  ```python
+ clf.predict(digits.data[-1:])
+```
