@@ -12,6 +12,8 @@ Generally speaking, a learning problem considers a set of n samples of data and 
 
 ## General Machine Learning Concepts:
 
+### General Machine Learning approaches
+
 * [supervised learning](https://en.wikipedia.org/wiki/Supervised_learning), in which the data comes with additional attributes that we want to predict. This problem can be either:
 
    * [classification](https://en.wikipedia.org/wiki/Statistical_classification): samples belong to two or more classes and we want to learn from already labeled data how to predict the class of unlabeled data. An example of a classification problem would be handwritten digit recognition, in which the aim is to assign each input vector to one of a finite number of discrete categories. Another way to think of classification is as a discrete (as opposed to continuous) form of supervised learning where one has a limited number of categories and for each of the n samples provided, one is to try to label them with the correct category or class.
@@ -19,5 +21,7 @@ Generally speaking, a learning problem considers a set of n samples of data and 
 
 * [unsupervised learning](https://en.wikipedia.org/wiki/Unsupervised_learning), in which the training data consists of a set of input vectors x without any corresponding target values. The goal in such problems may be to discover groups of similar examples within the data, where it is called clustering, or to determine the distribution of data within the input space, known as density estimation, or to project the data from a high-dimensional space down to two or three dimensions for the purpose of visualization (Click here to go to the Scikit-Learn unsupervised learning page).
 
+### Traning and Test Datasets
+Another important concept in machine learning is the idea of having a training set and a test set.
 
-
+Machine learning is about learning some properties of a data set and then testing those properties against another data set. A common practice in machine learning is to evaluate an algorithm by splitting a data set into two. We call one of those sets the training set, on which we learn some properties; we call the other set the testing set, on which we test the learned properties.
