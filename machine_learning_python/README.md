@@ -55,3 +55,28 @@ print(digits.images[0])
 As we can see a matrix encoding of all the digits between 0 to 9, are presented to us. the intensity of the ink on paper is encoded in numbers which are digitalized and given in the form of matrices so that it could be used by ML algorithms.
 
 ![GitHub Logo](digit_example.png)
+
+
+## Learning and Predicting over datasets
+
+Let's use this digits data set to train a model and then try to predict what numbers are written on paper. So in this case the task is to predict, given an image, which digit it represents. We are given samples of each of the 10 possible classes (the digits zero through nine) on which we fit a classifier in this case to be able to predict the classes to which unseen samples belong. This task of fiting a model and later predicting values is made super easy in sklearn:
+
+In scikit-learn, an estimator for classification is a Python object that implements the methods fit(X, y) and predict(T).
+For this example we will use Support vector machines to classify these numbers. For now let's just treat SVMs as black boxes.
+
+```python
+from sklearn import svm
+clf = svm.SVC(gamma=0.001, C=100.)
+```
+In this example, we set the value of gamma manually. To find good values for these parameters, we can use tools such as [grid search](https://scikit-learn.org/stable/modules/grid_search.html#grid-search) and [cross validation](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation). 
+
+The clf (for classifier) estimator instance is first fitted to the model; i.e. we learn the data first. This is done by passing our training set to the fit method. For the training set, we’ll use all the images from our dataset, except for the last image, which we’ll reserve for our predicting. We select the training set with the [:-1] Python syntax, which produces a new array that contains all but the last item from digits.data, basically we skip the last data point in our learning (not to over fit):
+
+```python
+clf.fit(digits.data[:-1], digits.target[:-1])  
+SVC(C=100.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=0.001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+  ```
+  Now that we tweaked and adjusted (i.e. trained) our machine learning algorithm we are ready to predict new (previously unseen) values based on solely from their 
