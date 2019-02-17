@@ -25,3 +25,13 @@ Generally speaking, a learning problem considers a set of n samples of data and 
 Another important concept in machine learning is the idea of having a training set and a test set.
 
 Machine learning is about learning some properties of a data set and then testing those properties against another data set. A common practice in machine learning is to evaluate an algorithm by splitting a data set into two. We call one of those sets the training set, on which we learn some properties; we call the other set the testing set, on which we test the learned properties.
+
+As mentioned above we will conver ML algorithms using a very convenient python package called SK-learn. We will see how this package makes machine learning easy to use.
+
+## Loading and preprocessing datasets to Learn and Predict.
+
+Now enough with the talking and let us see some examples of what we just talked about. The way these classic machine learning algorithms were designed and coded in SK-learn python package, is that they take data in the form of a matrix of intigers or floating numbers or categorical features, where Rows are considered to be the different data points and columns are considered to be the different features or attributes of your data (which also define the dimensionality of your data). So if we are given an nxm matrix and knowing that it is a training data set we can assume that we have n different data points where each different data point has m different attributes. Note, ideally all the data points within the same data set would have the same number of features, some datapoints would have missing values in some of their features which is also fine since data is not perfect in reality. There are various techniques on how to deal with missing values, you could either ignore those rows altogether if they are not alot, or average those values out, or try to predict missing values. We will talk about these techniques later. Usually the last or first column in datasets are the target in which we are trying to learn and predict. 
+
+SK-learn even provides us with pre-existing datasets (benchmarking datasets) so that we can try and test our predictors on them. Some of the more famous datasetsare [iris](https://en.wikipedia.org/wiki/Iris_flower_data_set) and [digits](http://archive.ics.uci.edu/ml/datasets/Pen-Based+Recognition+of+Handwritten+Digits) datasets for classification and the [boston house prices](https://archive.ics.uci.edu/ml/machine-learning-databases/housing/) dataset for regression.
+
+
