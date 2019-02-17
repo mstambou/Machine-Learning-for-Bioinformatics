@@ -83,5 +83,9 @@ SVC(C=100.0, cache_size=200, class_weight=None, coef0=0.0,
   ```python
  clf.predict(digits.data[-1:])
 ```
-The image from that digitized matrix is the following. Would you agree with the predictor? As you can see the task is not that trivial since the image is of poor quality (represented only 16b16 pixels)
+The image from that digitized matrix is the following. Would you agree with the predictor? As you can see the task is not that trivial since the image is of poor quality (represented only 16b16 pixels).
+
+
 ![GitHub Logo](prediction.png)
+
+All of these commands that we ran today could be found [here](ML_intro.py)
