@@ -8,5 +8,5 @@ from sklearn import cross_validation
 ```
 is Deprecated and in the newer versions of python it is replaced by:
 ```python
-from sklearn import cross_validation
+from sklearn.model_selection import cross_val_score
 ```
