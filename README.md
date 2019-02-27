@@ -13,7 +13,7 @@ It contains the materials covered in the lab sessions.
   * [Single Cell RNA Sequencing Using R](SCRS/) *(week 3)*
   * [RNAS-seq, raw reads to differential expression](RNA-seq/) *(week 4)*
   * [Machine learning with SK-learn Python](machine_learning_python) *(week 5)*
-  * [Machine learning Continued (real life example)](churn_dataset) *(week 6)*
+  * [Machine learning Continued (real life example)](churn) *(week 6)*
   * [Using R] *(week 7)*
   * [Learning & Prediction] (using Glimmer) *(week 7)*
   * [Lab implementation of the Viterbi algorithm] *(week 8)*
