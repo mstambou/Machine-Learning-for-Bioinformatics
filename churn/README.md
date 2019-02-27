@@ -23,4 +23,4 @@ def stratified_cv(X, y, clf_class, shuffle=True, n_splits=10, **kwargs):
         clf.fit(X_train,y_train)
         y_pred[jj] = clf.predict(X_test)
     return y_pred
-    ```
+```
