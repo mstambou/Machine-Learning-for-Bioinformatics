@@ -66,7 +66,7 @@ plt.ylim([y_test.min(), predictions.max()])
 plt.xlim([0, predictions.shape[0]])
 plt.legend();
 
-test_score = [classifier.loss_(y_test, y_pred) for y_pred in classifier.staged_decision_function(X_test)]
+test_score = [classifier.loss_(y_test, y_pred) for y_pred in classifier.staged_predict(X_test)]
 
 plt.figure(figsize=(16, 12))
 plt.title('Deviance');
@@ -81,3 +81,22 @@ plt.annotate('Overfit Point', xy=(600, test_score[600]), xycoords='data',
 plt.legend(loc='upper right');
 plt.xlabel('Boosting Iterations');
 plt.ylabel('Deviance');
+
+# Get Feature Importance from the classifier
+feature_importance = classifier.feature_importances_
+# Normalize The Features
+feature_importance = 100.0 * (feature_importance / feature_importance.max())
+sorted_idx = np.argsort(feature_importance)
+pos = np.arange(sorted_idx.shape[0]) + .5
+plt.figure(figsize=(16, 12))
+plt.barh(pos, feature_importance[sorted_idx], align='center', color='#7A68A6')
+plt.yticks(pos, np.asanyarray(california_housing_feature_names)[sorted_idx])
+plt.xlabel('Relative Importance')
+plt.title('Variable Importance')
+plt.show()
+
+features = ['MedInc', 'AveOccup', 'HouseAge', 'AveRooms',
+            ('AveOccup', 'HouseAge')]
+fig, ax = ensemble.partial_dependence.plot_partial_dependence(classifier, X_train, features, 
+                                                              feature_names=california_housing_feature_names, 
+                                                              figsize=(16, 12));
