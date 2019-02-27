@@ -13,8 +13,8 @@ import sklearn.model_selection as cross_validation
 
 for the stratified classifier use the following function as opposed the one in the blog. Some of the parameters have changed in the newer version of SK-learn
 ```python3
-def stratified_cv(X, y, clf_class, shuffle=True, n_splits=10, **kwargs):
-    stratified_k_fold = cross_validation.StratifiedKFold(y, n_splits=n_splits, shuffle=shuffle)
+def stratified_cv(X, y, clf_class, shuffle=True, n_folds=10, **kwargs):
+    stratified_k_fold = cross_validation.StratifiedKFold(y, n_splits=n_folds, shuffle=shuffle)
     y_pred = y.copy()
     for ii, jj in stratified_k_fold:
         X_train, X_test = X[ii], X[jj]
