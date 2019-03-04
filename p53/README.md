@@ -17,6 +17,6 @@ Using this dataset, I have trained and tested a classifier, called ["myClassifie
 
 I would expect you also to perform n-fold cross validation using your classifiers and generate ROC curves so that we can compare our results.
 
-To compensate for your efforts I will give you 1 BONUS point over your final average <br/>for the course for each extra 0.1 points that your classifier achieves over my reported <br/> AUC. i.e if your classifier achieves and AUC of 0.93 I will reward your with 1 extra point over your final average.
+To compensate for your efforts I will give you 1 BONUS point over your final average <br/>for the course for each extra 0.1 points that your classifier achieves over my reported <br/> AUC. i.e if your classifier achieves and AUC of 0.93 I will reward <br/>you with 1 extra point over your final average.
 
 Good luck!
