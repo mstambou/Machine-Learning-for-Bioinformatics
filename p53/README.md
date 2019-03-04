@@ -1,3 +1,3 @@
 This week we're doing things slightly differently. For today's lab it will be more hands on. I will provide you with breast cancer classification dataset and you will work throughout the lab to develop your own classifier, instead of me demonstrating. However there will be a small demo first by me. 
 
-I have trained and tested a classifier, called ["myClassifier.py"](myClassier.py), the task is can you beat my classifier's performance?. To test the performance I did a 10-fold cross validation and plotted the ROC curve and calculted the Area Under the Curve. The values that I obtained was 0.83, could you do better than that?
+I have trained and tested a classifier, called ["myClassifier.py"](myClassifier.py), the task is can you beat my classifier's performance?. To test the performance I did a 10-fold cross validation and plotted the ROC curve and calculted the Area Under the Curve. The values that I obtained was 0.83, could you do better than that?
