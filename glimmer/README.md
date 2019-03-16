@@ -21,3 +21,8 @@ module load glimmer
     * Using long, non-overlapping ORFs (using `long-orfs`)
     * Using genes from a highly similar species.
  2. Predicting genes using `glimmer3`
+
+Let us use the sample files provided with Glimmer package, to practice on how to run the program.
+
+  * [Treponema pallidium genome](tpall.fna)
+  * [List of annotated genes](tpall.nh)
