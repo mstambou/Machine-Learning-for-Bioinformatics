@@ -26,3 +26,80 @@ Let us use the sample files provided with Glimmer package, to practice on how to
 
   * [Treponema pallidium genome](tpall.fna)
   * [List of annotated genes](tpall.nh)
+  
+### Build a model from scratch
+Running Glimmer is a two-step process. First, a probability model of coding sequences,
+called an interpolated context model or ICM, must be built. This is done by the program
+build-icm from a set of training sequences
+
+We first find long, overlapping ORFs in the genome using `long-orfs`.
+Note that :
+
+`USAGE: long-orfs [options] <sequence-file> <output-file>`
+
+So we can issue the following command on bash :
+
+`long-orfs -n -t 1.15 tpall.fna orf-list.nh`
+
+Which will generate `orf-list.nh`.
+Examine this file using cat.
+Now we need to extract the training sequences from the genome using `extract`. Note that :
+
+`USAGE:  extract [options] <sequence-file> <coords>`
+
+So we can do  :
+
+`extract -t tpall.fna orf-list.nh > orf-seq.fna`
+
+Which will generate orf-seq.fna.
+Examine this file using cat.
+We will then build the model based on this training set using `build-icm`.
+Note that :   
+
+`USAGE:  build-icm [options] output_file < input-file`
+
+So we can do :
+
+`build-icm -r orf-model.icm < orf-seq.fna`
+
+Which will generate the file `orf-model.icm`.
+Examine this file with cat.
+Now we can predict other genes in our genome using `glimmer3`. Note that :
+
+`USAGE:  glimmer3 [options] <sequence-file> <icm-file> <tag>`
+
+So we can do :
+
+`glimmer3 tpall.fna orf-model.icm orfBased`
+
+Which will generate files `orfBased.predict` and `orfBased.detail`.
+Examine these with cat.
+
+### Build a model using known genes
+
+Building the model from scratch is the worst case scenario.
+In most cases, a lot of genes may be easily identified using homology searches.
+We have a list of such genes in [tpall.nh](tpall.nh) and we can use them instead of the long ORF sequences we found.
+This is likely to yield better results in most occasions.
+
+Start by examining `tpall.nh` with cat.
+Then we can extract the sequences for these genes by doing :
+
+`extract -t tpall.fna tpall.nh > gene-seq.fna`
+
+Build the model by doing :
+
+`build-icm -r gene-model.icm < gene-seq.fna`
+
+Predict more genes by doing :
+
+`glimmer3 tpall.fna gene-model.icm geneBased`
+
+Examine the resulting files `geneBased.predict` and `geneBased.detail` to see how your results differ from the previous run.
+
+#### Combining training sets
+
+Do you think combining the long orfs you found using `long-orfs` with the genes you found by homology searches a good idea?
+
+Do that as an excercise and see how your results differ.
+
