@@ -8,3 +8,16 @@ Glimmer on the other hand uses some generalization of a Markov Chain, in particu
 * [lecture notes about Glimmer](https://courses.cs.washington.edu/courses/cse527/00wi/lectures/lect14.pdf)
 * [Glimmer paper 1](https://www.ncbi.nlm.nih.gov/pubmed/10556321)
 * [Glimmer paper 2](https://www.ncbi.nlm.nih.gov/pubmed/9421513)
+
+Glimmer is allready preinstalled on SICE servers, to use it all we have to do is to load it as a module, i.e.
+```
+module load glimmer
+```
+
+## Using Glimmer
+
+1. Building the model using `build-icm`
+    * Using known genes
+    * Using long, non-overlapping ORFs (using `long-orfs`)
+    * Using genes from a highly similar species.
+ 2. Predicting genes using `glimmer3`
