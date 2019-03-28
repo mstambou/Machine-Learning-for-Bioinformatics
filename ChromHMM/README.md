@@ -10,6 +10,7 @@ Instead of sequence data, it uses experimental results mapping epigenomic (methy
 
   * The alphabet size is 2 (binary) : each feature either exists or not
   * There are multiple 'tracks' (sequences, variables ..) : these are multiple experiments done on the same chromosome
+  * A good resource explaining high level ideas about chromatin organization and states could be found [here](https://www.encodeproject.org/documents/049704a4-5c58-4631-acf1-4ef152bdb3ef/@@download/attachment/Learning_Chromatin_States_from_ChIP-seq_data.pdf)
 
 ### Installing ChromHMM
 
