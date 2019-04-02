@@ -17,6 +17,6 @@ It contains the materials covered in the lab sessions.
   * [Beat My Classifier](p53/) *(week 7)*
   * [Learning & Prediction (using Glimmer)](glimmer/) *(week 8)*
   * [Using ChromHMM](ChromHMM/) *(week 9)*
-  * [Lab implementation of the Viterbi algorithm] *(week 10)*  
-  * [Using HMMER] *(week 11)*
-  * [ML practices in R] *(week 12)*
+  * [Using HMMER](HMMER/) *(week 10)*
+  * [Lab implementation of the Viterbi algorithm ?] *(week 11)*  
+  * [No lab] *(week 12)*
