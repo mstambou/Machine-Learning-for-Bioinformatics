@@ -23,7 +23,7 @@ HMMER is also the basis of [pfam](http://pfam.xfam.org/).
 HMMER is written in glorious C99 and has an exceptionally well written [manual](http://eddylab.org/software/hmmer3/3.1b2/Userguide.pdf) for both installation and usage.
 
 HMMER is already installed on all SoIC and UITS computers such as silo, tank and Karst.
-We only need to load it by doing `module load hmmer`.
+We only need to load it by doing `module load hmmer`, just like how we did for glimmer.
 Note that there is no excutable called `hmmer` but hmmer consists of multiple tools such as `hmmbuild`, `hmmsearch`, `phmmer`, and `jackhmmer`.
 Alternatively, we could download the source code from the main website and compile, or directly get the binary version.
 Finally, we could even use the EBI-hosted [webserver](https://www.ebi.ac.uk/Tools/hmmer/) to use hmmer without any installation.
