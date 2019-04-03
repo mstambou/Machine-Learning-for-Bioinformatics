@@ -60,7 +60,7 @@ Let us examine the output using a pager such as `less`.
 An alternative use of our new tool is to search for a conserved domain in a multi-domain protein.
 The tutorial conveniently includes an example case.
 [fn3.sto](fn3.sto) is a multi sequence alignment for a finbronectin domain that is commonly found in various multi domain proteins.
-We can easily build a model for this by doing `hmmebuild  fn3.hmm fn3.sto`.
+We can easily build a model for this by doing `hmmbuild  fn3.hmm fn3.sto`.
 We could then search for this domain in a large multi-domain protein provided in the file [7LESS_DROME](7LESS_DROME) by doing `hmmsearch fn3.hmm 7LESS DROME > fn3.out`.
 Let us examine what the output looks like this time around.
 
